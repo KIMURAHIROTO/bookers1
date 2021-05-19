@@ -1,0 +1,17 @@
+<%= flash[:notice] %>
+<%= flash[:success] %>
+<%= flash[:danger] %>
+
+<%= form_with model:@books, url:"/books#{@book.id}", local:true do |f| %>
+<p>
+<strong>title:</strong>
+<%= @book.title %><br>
+</p>
+
+<p>
+<strong>body:</strong>
+<%= @book.body %><br>
+</p>
+<%= link_to "Edit", edit_book_path(@book.id) %> | 
+<%= link_to "Back", books_path(@book.id)%>
+<% end %>
